@@ -1,0 +1,1869 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>SMPS IT IMAM SYAFI'I BATAM Graduation Announcement</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Nunito&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: "Comfortaa", cursive;
+      background-color: #f0f9ff;
+      overflow-x: hidden;
+    }
+    .nunito-font {
+      font-family: "Nunito", sans-serif;
+    }
+    .cover-page {
+      font-family: Cambria, serif;
+      letter-spacing: 1pt;
+    }
+    .page {
+      display: none;
+      min-height: 100vh;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .page.active {
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+      opacity: 1;
+    }
+    /* New button styles for page 1 with flash animation */
+    .btn-page1 {
+      background: #2563eb;
+      color: white;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border-radius: 9999px;
+      box-shadow: 0 8px 15px rgba(37, 99, 235, 0.4);
+      transition: background-color 0.3s ease, transform 0.3s ease,
+        box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 1.125rem;
+      position: relative;
+      overflow: hidden;
+      animation: flashBtn 3s ease-in-out infinite;
+      cursor: pointer;
+      user-select: none;
+    }
+    .btn-page1:hover {
+      background: #1e40af;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(30, 64, 175, 0.6);
+      animation-play-state: paused;
+    }
+    .btn-page1::after {
+      content: "";
+      position: absolute;
+      top: -60%;
+      left: -60%;
+      width: 220%;
+      height: 220%;
+      background: rgba(255, 255, 255, 0.15);
+      transform: rotate(45deg);
+      animation: btnFlash 2.5s infinite;
+      pointer-events: none;
+    }
+    .btn-page1:active {
+      animation: btnClickScale 0.2s ease forwards;
+      box-shadow: 0 4px 10px rgba(30, 64, 175, 0.8);
+      transform: scale(0.95);
+    }
+    /* New button styles for page 2 */
+    .btn-page2 {
+      background: transparent;
+      color: #1e40af;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 12px;
+      border: 3px solid #1e40af;
+      box-shadow: inset 0 0 0 0 #1e40af;
+      transition: box-shadow 0.3s ease, color 0.3s ease,
+        background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 1.125rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+    }
+    .btn-page2:hover {
+      color: white;
+      box-shadow: inset 200px 0 0 0 #1e40af;
+      background-color: #1e40af;
+    }
+    .btn-page2 svg {
+      transition: transform 0.3s ease;
+    }
+    .btn-page2:hover svg {
+      transform: translateX(4px);
+    }
+    .btn-page2:active {
+      animation: btnClickScale 0.2s ease forwards;
+      box-shadow: inset 0 0 15px 5px #1e40af;
+      transform: scale(0.95);
+    }
+    /* New button styles for page 3 with flash animation */
+    .btn-page3 {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(37, 99, 235, 0.5);
+      transition: background 0.4s ease, box-shadow 0.4s ease,
+        transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 1.125rem;
+      position: relative;
+      overflow: hidden;
+      animation: flashBtn 3s ease-in-out infinite;
+      cursor: pointer;
+      user-select: none;
+    }
+    .btn-page3:hover {
+      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+      box-shadow: 0 10px 25px rgba(30, 64, 175, 0.7);
+      transform: scale(1.05);
+      animation-play-state: paused;
+    }
+    .btn-page3::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.15);
+      transform: rotate(45deg);
+      animation: btnFlash 2s infinite;
+      pointer-events: none;
+    }
+    .btn-page3:active {
+      animation: btnClickScale 0.2s ease forwards;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.8);
+      transform: scale(0.95);
+    }
+    /* Retain existing animations */
+    @keyframes btnFlash {
+      0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+      }
+      100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+      }
+    }
+    @keyframes btnClickScale {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(0.95);
+      }
+    }
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #3b82f6;
+      opacity: 0;
+    }
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-100px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 50;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .modal.active {
+      display: flex;
+      animation: alertFadeIn 0.3s forwards;
+    }
+    @keyframes alertFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .alert-box {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 600px;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: alertBoxSlideIn 0.4s 0.1s forwards;
+      position: relative;
+      padding: 2.5rem 2rem 2rem 2rem;
+    }
+    @keyframes alertBoxSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .alert-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem auto;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .alert-content {
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .alert-button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      background: linear-gradient(45deg, #1e40af, #3b82f6);
+      color: white;
+      font-weight: bold;
+      border-radius: 0 0 12px 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.125rem;
+      user-select: none;
+    }
+    .alert-button:hover {
+      background: linear-gradient(45deg, #1e3a8a, #2563eb);
+    }
+    .alert-button::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(45deg);
+      animation: btnFlash 2s infinite;
+    }
+    .school-logo {
+      width: 180px;
+      height: 180px;
+      margin: 3rem auto 0 auto; /* lowered the logo by adding top margin */
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border: 4px solid #ffffff;
+    }
+    .school-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .countdown-container {
+      margin: 20px auto;
+      max-width: 600px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .countdown-title {
+      text-align: center;
+      color: #1e40af;
+      font-weight: bold;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    .countdown-display {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+    .countdown-value {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #1e40af;
+      background: rgba(219, 234, 254, 0.5);
+      border-radius: 10px;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+    }
+    .countdown-value.show {
+      animation: fadeSlideIn 0.5s forwards;
+    }
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .countdown-label {
+      font-size: 0.8rem;
+      color: #3b82f6;
+      margin-top: 5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .countdown-separator {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #3b82f6;
+      display: flex;
+      align-items: center;
+      animation: pulseSeparator 1s infinite;
+    }
+    @keyframes pulseSeparator {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+    .countdown-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    .countdown-value::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(59, 130, 246, 0.2),
+        transparent
+      );
+      animation: shine 3s infinite;
+    }
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+      20% {
+        left: 100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+    .countdown-value::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+      animation: scanBottom 2s linear infinite;
+    }
+    @keyframes scanBottom {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    .slide-animation {
+      animation: slideNumber 0.5s ease-in-out;
+      transform-origin: center;
+    }
+    @keyframes slideNumber {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .no-spacing {
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+    }
+    .birthday-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .balloon {
+      position: absolute;
+      width: 30px;
+      height: 45px;
+      border-radius: 50%;
+      animation: balloonFloat 10s ease-in-out infinite;
+      opacity: 0.8;
+      z-index: 1;
+    }
+    @keyframes balloonFloat {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-100px) rotate(20deg);
+      }
+    }
+    .ribbon {
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+      animation: ribbonWave 3s ease-in-out infinite;
+    }
+    @keyframes ribbonWave {
+      0%,
+      100% {
+        transform: rotate(-5deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+    .birthday-star {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: radial-gradient(circle, #ffeb3b, transparent);
+      border-radius: 50%;
+      animation: starTwinkle 2s ease-in-out infinite;
+    }
+    @keyframes starTwinkle {
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+    .birthday-text {
+      animation: birthdayPulse 2s infinite;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    }
+    @keyframes birthdayPulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    .cake-icon {
+      position: relative;
+      animation: cakeWobble 3s ease-in-out infinite;
+      display: inline-block;
+    }
+    @keyframes cakeWobble {
+      0%,
+      100% {
+        transform: rotate(-5deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+    .party-popper {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      animation: popperSpin 3s linear infinite;
+    }
+    @keyframes popperSpin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .birthday-confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      animation: birthdayConfettiFall 4s linear forwards;
+    }
+    @keyframes birthdayConfettiFall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(400px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    /* Futuristic line scan animation */
+    @keyframes futuristicLineScan {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+    /* Futuristic circles pulse */
+    @keyframes futuristicCirclePulse {
+      0%, 100% {
+        opacity: 0.1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.3;
+        transform: scale(1.1);
+      }
+    }
+    /* Futuristic line pulse */
+    @keyframes futuristicLinePulse {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.7;
+      }
+    }
+    /* Futuristic overlay container */
+    .futuristic-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: visible;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .futuristic-circle-anim {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid rgba(59, 130, 246, 0.5);
+      background: rgba(59, 130, 246, 0.15);
+      animation: futuristicCirclePulse 2.5s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+    .futuristic-line-anim {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+      animation: futuristicLinePulse 2.5s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+    /* Curtain animation for page1 */
+    .curtain-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9998;
+      overflow: hidden;
+      display: none;
+    }
+    .curtain-container.active {
+      display: block;
+      animation: curtainOpen 0.6s forwards;
+    }
+    .curtain-left,
+    .curtain-right {
+      position: absolute;
+      top: 0;
+      width: 50vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.7);
+      z-index: 9999;
+    }
+    .curtain-left {
+      left: 0;
+      transform-origin: left;
+      animation: curtainLeftClose 0.6s forwards;
+    }
+    .curtain-right {
+      right: 0;
+      transform-origin: right;
+      animation: curtainRightClose 0.6s forwards;
+    }
+    @keyframes curtainLeftClose {
+      0% {
+        transform: translateX(0) scaleX(1);
+      }
+      100% {
+        transform: translateX(-100%) scaleX(0);
+      }
+    }
+    @keyframes curtainRightClose {
+      0% {
+        transform: translateX(0) scaleX(1);
+      }
+      100% {
+        transform: translateX(100%) scaleX(0);
+      }
+    }
+    @keyframes curtainOpen {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    /* Loading spinner for button */
+    .btn-spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    /* Loading state disables pointer events and dims button */
+    .btn-loading {
+      pointer-events: none;
+      opacity: 0.75;
+    }
+    /* Responsive adjustments for mobile */
+    @media (max-width: 640px) {
+      .school-logo {
+        width: 140px;
+        height: 140px;
+        margin: 2rem auto 0 auto;
+      }
+      h1.text-4xl {
+        font-size: 2.25rem; /* text-3xl */
+      }
+      h2.text-3xl {
+        font-size: 1.75rem; /* text-2xl */
+      }
+      h3.text-2xl {
+        font-size: 1.25rem; /* text-xl */
+      }
+      .countdown-value {
+        font-size: 1.8rem;
+        height: 60px;
+      }
+      .countdown-item {
+        min-width: 60px;
+      }
+      .btn-page1,
+      .btn-page2,
+      .btn-page3 {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+      }
+      .btn-spinner {
+        width: 16px;
+        height: 16px;
+        border-width: 2.5px;
+      }
+      .countdown-container {
+        max-width: 90vw;
+        padding: 15px;
+      }
+      .prose p {
+        font-size: 1rem;
+      }
+      .prose {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom Alert Popup -->
+  <div class="custom-alert modal" id="customAlert">
+    <div class="alert-box">
+      <div class="alert-icon bg-red-100">
+        <svg
+          class="h-10 w-10 text-red-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          ></path>
+        </svg>
+      </div>
+      <div class="alert-content">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Data Tidak Ditemukan</h3>
+        <p class="text-gray-600">Nama Lengkap/NISN yang anda masukkan tidak lengkap.</p>
+      </div>
+      <button class="alert-button" onclick="closeCustomAlert()">OK</button>
+    </div>
+  </div>
+  <!-- Page Transition Overlay -->
+  <div
+    class="page-transition fixed top-0 left-0 w-full h-full bg-blue-900 z-[100] transform scale-x-0 origin-right pointer-events-none"
+  ></div>
+  <div class="digital-noise fixed top-0 left-0 w-full h-full z-[90] pointer-events-none opacity-0"></div>
+
+  <!-- Futuristic Animation Overlay -->
+  <div id="futuristicOverlay" class="futuristic-overlay" aria-hidden="true"></div>
+
+  <!-- Curtain Animation Overlay for Page 1 -->
+  <div id="curtainOverlay" class="curtain-container" aria-hidden="true">
+    <div class="curtain-left"></div>
+    <div class="curtain-right"></div>
+  </div>
+
+  <!-- Page 1: Welcome Page -->
+  <div class="page active" id="page1">
+    <div
+      class="relative w-full min-h-screen bg-gradient-to-b from-blue-50 to-blue-200 flex flex-col items-center justify-center px-4 overflow-hidden cover-page"
+    >
+      <div class="wave"></div>
+      <div class="z-10 text-center max-w-3xl mx-auto">
+        <div class="mb-6">
+          <div class="school-logo floating">
+            <img
+              alt="SMPS IT IMAM SYAFI'I BATAM school logo, circular emblem with blue and white colors, modern design"
+              height="180"
+              src="https://iili.io/3ts7qAl.md.png"
+              width="180"
+            />
+          </div>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4 nunito-font">
+          PENGUMUMAN KELULUSAN
+        </h1>
+        <h2 class="text-3xl md:text-4xl font-semibold text-blue-700 mb-2 nunito-font">
+          SANTRI &amp; SANTRIWATI
+        </h2>
+        <h2 class="text-3xl md:text-4xl font-semibold text-blue-700 mb-2 nunito-font">
+          SMPS IT IMAM SYAFI'I BATAM
+        </h2>
+        <h3 class="text-2xl md:text-3xl font-medium text-blue-600 mb-0 no-spacing nunito-font">
+          ANGKATAN XI TAHUN 2025
+        </h3>
+        <div class="mt-0 mb-6 text-blue-700 no-spacing text-lg">
+          <p>Jl. Hang Lekieu No. 2, Kel. Sambau, Kec. Nongsa, Kota Batam</p>
+        </div>
+        <div class="countdown-container">
+          <div class="countdown-background">
+            <div class="grid-pattern"></div>
+          </div>
+          <h4 class="countdown-title text-lg md:text-xl">WAKTU MENUJU KELULUSAN</h4>
+          <div class="countdown-display">
+            <div class="countdown-item">
+              <div
+                class="countdown-value"
+                id="days"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                00
+              </div>
+              <div class="countdown-label">Hari</div>
+            </div>
+            <div class="countdown-separator" aria-hidden="true">:</div>
+            <div class="countdown-item">
+              <div
+                class="countdown-value"
+                id="hours"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                00
+              </div>
+              <div class="countdown-label">Jam</div>
+            </div>
+            <div class="countdown-separator" aria-hidden="true">:</div>
+            <div class="countdown-item">
+              <div
+                class="countdown-value"
+                id="minutes"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                00
+              </div>
+              <div class="countdown-label">Menit</div>
+            </div>
+            <div class="countdown-separator" aria-hidden="true">:</div>
+            <div class="countdown-item">
+              <div
+                class="countdown-value"
+                id="seconds"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                00
+              </div>
+              <div class="countdown-label">Detik</div>
+            </div>
+          </div>
+        </div>
+        <div class="pulse mt-8">
+          <button
+            aria-label="Mulai Sekarang"
+            class="btn-page1 shadow-lg mx-auto relative overflow-hidden"
+            onclick="handleButtonClick('page2', this)"
+            id="startButton"
+          >
+            <span class="relative z-10 flex items-center gap-2">
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8z"
+                />
+              </svg>
+              <span>MULAI SEKARANG</span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <!-- Decorative circles -->
+      <div class="absolute top-10 left-10 w-16 h-16 bg-blue-500 rounded-full opacity-20"></div>
+      <div class="absolute top-20 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-20"></div>
+      <div class="absolute bottom-40 left-1/4 w-12 h-12 bg-blue-300 rounded-full opacity-20"></div>
+      <div class="absolute bottom-60 right-1/4 w-20 h-20 bg-blue-600 rounded-full opacity-20"></div>
+      <!-- Futuristic decorative elements -->
+      <div
+        class="futuristic-circle static"
+        style="
+          width: 200px;
+          height: 200px;
+          top: 20%;
+          left: 10%;
+          border-radius: 50%;
+          background: rgba(59, 130, 246, 0.1);
+          border: 2px solid rgba(59, 130, 246, 0.3);
+          position: absolute;
+          pointer-events: none;
+        "
+      ></div>
+      <div
+        class="futuristic-circle static"
+        style="
+          width: 150px;
+          height: 150px;
+          bottom: 15%;
+          right: 5%;
+          border-radius: 50%;
+          background: rgba(59, 130, 246, 0.1);
+          border: 2px solid rgba(59, 130, 246, 0.3);
+          position: absolute;
+          pointer-events: none;
+        "
+      ></div>
+      <div
+        class="futuristic-line static"
+        style="
+          top: 30%;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+          animation: futuristicLineScan 2s linear infinite;
+          position: absolute;
+          pointer-events: none;
+        "
+      ></div>
+      <div
+        class="futuristic-line static"
+        style="
+          bottom: 25%;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+          animation: futuristicLineScan 2s linear infinite;
+          position: absolute;
+          pointer-events: none;
+        "
+      ></div>
+    </div>
+  </div>
+  <!-- Page 2: Sambutan Kepala Sekolah -->
+  <div class="page" id="page2">
+    <div class="min-h-screen bg-gradient-to-b from-blue-50 to-blue-200 flex flex-col">
+      <header class="bg-blue-800 text-white py-4">
+        <div class="container mx-auto px-4">
+          <h1 class="text-2xl font-bold text-center nunito-font">
+            SMPS IT IMAM SYAFI'I BATAM
+          </h1>
+        </div>
+      </header>
+      <div
+        class="container mx-auto px-4 py-8 flex-grow flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-white rounded-lg shadow-xl p-8 max-w-3xl w-full relative overflow-hidden"
+        >
+          <div
+            class="flex flex-col md:flex-row items-center mb-8"
+          >
+            <div class="md:mr-8 mb-4 md:mb-0">
+              <div
+                class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center relative"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-20 w-20 text-blue-800"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+                <div
+                  class="absolute inset-0 border-2 border-blue-400 rounded-full"
+                  style="animation: pulse 2s infinite"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-blue-800 mb-2 nunito-font">
+                Sambutan Kepala Sekolah
+              </h2>
+              <h3 class="text-lg font-medium text-blue-600 nunito-font">
+                Khaidir, S.Pd
+              </h3>
+            </div>
+          </div>
+          <div class="prose max-w-none">
+            <p class="mb-4">Assalamu'alaikum Warahmatullahi Wabarakatuh.</p>
+            <p class="mb-4">
+              Alhamdulillah, puji syukur kita panjatkan ke hadirat Allah SWT yang
+              telah memberikan rahmat dan karunia-Nya sehingga kita dapat
+              menyelesaikan tahun 2024/2025 dengan baik.
+            </p>
+            <p class="mb-4">
+              Kepada seluruh siswa kelas IX SMPS IT IMAM SYAFI'I BATAM yang telah
+              menyelesaikan pendidikan dengan baik, saya mengucapkan selamat atas
+              kelulusan yang telah diraih. Pencapaian ini merupakan hasil dari
+              kerja keras, dedikasi, dan semangat belajar yang tinggi.
+            </p>
+            <p class="mb-4">
+              Semoga ilmu yang telah diperoleh dapat bermanfaat dan menjadi bekal
+              untuk melanjutkan pendidikan ke jenjang yang lebih tinggi. Tetaplah
+              menjadi pribadi yang berakhlak mulia, berprestasi, dan bermanfaat
+              bagi agama, bangsa, dan negara.
+            </p>
+            <p class="mb-4">Wassalamu'alaikum Warahmatullahi Wabarakatuh.</p>
+          </div>
+          <div class="mt-8 text-center">
+            <button
+              aria-label="Cek Kelulusan"
+              class="btn-page2 shadow-lg mx-auto relative overflow-hidden"
+              onclick="handleButtonClick('page3', this)"
+            >
+              <span class="relative z-10 flex items-center">
+                <svg
+                  aria-hidden="true"
+                  class="h-6 w-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 013 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+                CEK KELULUSAN
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <footer class="bg-blue-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+          <div class="flex flex-col items-center justify-center">
+            <div class="flex items-center mb-2">
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+                <path d="M12,6 L7,10 L17,10 Z" stroke-width="2"></path>
+                <path d="M9,10 L9,16 L15,16 L15,10 Z" stroke-width="2"></path>
+                <path d="M12,10 L12,16" stroke-width="2"></path>
+              </svg>
+              <span class="font-semibold">SMPS IT IMAM SYAFI'I</span>
+            </div>
+            <p class="text-sm">Supported by: Jefri Basajara</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- Page 3: Cek Kelulusan -->
+  <div class="page" id="page3">
+    <div class="min-h-screen bg-gradient-to-b from-blue-50 to-blue-200 flex flex-col">
+      <header class="bg-blue-800 text-white py-4">
+        <div class="container mx-auto px-4">
+          <h1 class="text-2xl font-bold text-center nunito-font">
+            SMPS IT IMAM SYAFI'I BATAM
+          </h1>
+        </div>
+      </header>
+      <div
+        class="container mx-auto px-4 py-8 flex-grow flex flex-col items-center justify-center"
+      >
+        <div
+          class="bg-white rounded-lg shadow-xl p-8 max-w-3xl w-full relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-300"
+          ></div>
+          <h2
+            class="text-2xl font-bold text-blue-800 mb-6 text-center nunito-font"
+          >
+            Cek Kelulusan Siswa
+          </h2>
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg
+                  aria-hidden="true"
+                  class="h-5 w-5 text-blue-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 112 0 1 1 0 01-2 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-blue-700">
+                  Masukkan <strong>NAMA LENGKAP</strong> atau <strong>NISN</strong>
+                  untuk melihat hasil kelulusan.
+                </p>
+                <p class="text-sm text-blue-700 mt-2">Contoh: "Fulan" atau "12345"</p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6 relative">
+            <label
+              class="block text-sm font-medium text-gray-700 mb-1"
+              for="search"
+              >Nama Lengkap / NISN</label
+            >
+            <input
+              aria-label="Input Nama Lengkap atau NISN"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              id="search"
+              placeholder="Masukkan Nama Lengkap atau NISN"
+              type="text"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500"
+              style="animation: futuristicLineScan 2s linear infinite"
+            ></div>
+          </div>
+          <div class="text-center">
+            <button
+              aria-label="Periksa Kelulusan"
+              class="btn-page3 shadow-lg mx-auto relative overflow-hidden"
+              onclick="handleButtonClick('check', this)"
+              id="checkButton"
+            >
+              <span class="relative z-10 flex items-center gap-2">
+                <svg
+                  aria-hidden="true"
+                  class="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+                <span>PERIKSA KELULUSAN</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <footer class="bg-blue-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+          <div class="flex flex-col items-center justify-center">
+            <div class="flex items-center mb-2">
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+                <path d="M12,6 L7,10 L17,10 Z" stroke-width="2"></path>
+                <path d="M9,10 L9,16 L15,16 L15,10 Z" stroke-width="2"></path>
+                <path d="M12,10 L12,16" stroke-width="2"></path>
+              </svg>
+              <span class="font-semibold">SMPS IT IMAM SYAFI'I</span>
+            </div>
+            <p class="text-sm">Supported by: Jefri Basajara</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- Modal Kelulusan -->
+  <div
+    aria-describedby="modalDesc"
+    aria-labelledby="modalTitle"
+    aria-modal="true"
+    class="modal"
+    id="graduationModal"
+    role="dialog"
+  >
+    <div
+      class="bg-white rounded-lg shadow-xl p-8 max-w-lg w-full mx-4 relative birthday-container"
+    >
+      <div
+        class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-300 via-green-500 to-green-300"
+      ></div>
+      <!-- Birthday Animation Elements -->
+      <div id="birthdayElements"></div>
+      <div class="text-center" id="modalContent" style="animation: fadeSlideIn 0.5s forwards"></div>
+      <button
+        aria-label="Tutup Modal"
+        class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full flex items-center justify-center relative overflow-hidden"
+        onclick="closeModal()"
+      >
+        <span class="relative z-10 flex items-center gap-2">
+          <i class="fas fa-times fa-lg" aria-hidden="true"></i> TUTUP (<span id="autoCloseCountdown">10</span>s)
+        </span>
+        <div
+          class="absolute top-0 left-0 right-0 bottom-0 bg-white opacity-30"
+          style="animation: btnFlash 2s infinite"
+        ></div>
+      </button>
+    </div>
+  </div>
+  <script>
+    // Data kelulusan siswa
+    const graduationData = [
+      { name: "ABDUL AZIZUL HAKIM", nisn: "92092169", status: "LULUS" },
+      { name: "ABDUL HAMID", nisn: "93880798", status: "LULUS" },
+      { name: "ABDULLAH ASYAUKANI", nisn: "91148457", status: "LULUS" },
+      { name: "ABDULLAH SYUKRI KHALIL", nisn: "103686513", status: "LULUS" },
+      { name: "ABDURRAHMAN ASLAM ASRIDONI", nisn: "94512197", status: "LULUS" },
+      { name: "ABDURRAHMAN ASSUDAISY", nisn: "3091466782", status: "LULUS" },
+      { name: "ADE ZULKARNAIN", nisn: "95470995", status: "LULUS" },
+      { name: "ADITYA MAULANA", nisn: "97979890", status: "LULUS" },
+      { name: "AHMAD ZAIDAN HANIF", nisn: "106740678", status: "LULUS" },
+      { name: "AHMAD ZAKI NADA PUTRA", nisn: "105724018", status: "LULUS" },
+      { name: "ATHHAR SYAKIIL NELDI", nisn: "96637514", status: "LULUS" },
+      { name: "BAYU NIRWANA PUTRA TAUFAN", nisn: "92847846", status: "LULUS" },
+      { name: "BOY ALFIANSYAH ABIDIN", nisn: "102656201", status: "LULUS" },
+      { name: "CHANDRA PANDU JATMIKA MA", nisn: "91639055", status: "LULUS" },
+      { name: "DANISH GHASSAN", nisn: "99678128", status: "LULUS" },
+      { name: "FACHRI MUHAMAD ARDI", nisn: "102391390", status: "LULUS" },
+      { name: "FADLAN AGAM ANWAR", nisn: "3106450892", status: "LULUS" },
+      { name: "FAHRI MAULANA ISHAK", nisn: "97163254", status: "LULUS" },
+      { name: "FARHAN ABDURRAHMAN", nisn: "3098523117", status: "LULUS" },
+      { name: "FARIS YAZDAN FATUROHMAN", nisn: "101153256", status: "LULUS" },
+      { name: "FATTAN RAIHANABIL EL RAFIE", nisn: "99049001", status: "LULUS" },
+      { name: "FUAD OCKTORIO SIREGAR", nisn: "93286085", status: "LULUS" },
+      { name: "GALIH HAZIQ NARARYA", nisn: "107304135", status: "LULUS" },
+      { name: "HAFIZH AL MUBARAK", nisn: "92875641", status: "LULUS" },
+      { name: "HAIDAR WIDAD WAHYUDI", nisn: "103676861", status: "LULUS" },
+      { name: "MUHAMMAD IMANUDDIN", nisn: "99027168", status: "LULUS" },
+      { name: "HARITS SEPRIANSYAH", nisn: "96959584", status: "LULUS" },
+      { name: "IZZAT IFTIKHAR IMALKO", nisn: "105933041", status: "LULUS" },
+      { name: "KENZIE ESA EXCELLENTDYA", nisn: "107017839", status: "LULUS" },
+      { name: "LUQMANUDDIN HAKIM RAMBE", nisn: "96353138", status: "LULUS" },
+      { name: "M DAFFA NABABAN", nisn: "102247012", status: "LULUS" },
+      { name: "MIRZA ZULFADHLI", nisn: "96263395", status: "LULUS" },
+      { name: "MOVICH DAFFAA SAJJID", nisn: "93559284", status: "LULUS" },
+      { name: "MUHAMAD JIBRIL", nisn: "105944462", status: "LULUS" },
+      { name: "MUHAMMAD ABBAS RASYIID ALAMSYAH", nisn: "108706959", status: "LULUS" },
+      { name: "MUHAMMAD AMMAR ARDIANSYAH", nisn: "91450707", status: "LULUS" },
+      { name: "MUHAMMAD AYYUB ADLI SYAH", nisn: "94976002", status: "LULUS" },
+      { name: "MUHAMMAD FAKHRUDDIN", nisn: "91302799", status: "LULUS" },
+      { name: "MUHAMMAD FARIS AFHAM", nisn: "92763291", status: "LULUS" },
+      { name: "MUHAMMAD GALIH AL-DZIKRI", nisn: "96811886", status: "LULUS" },
+      { name: "MUHAMMAD HAFIDZ RISWANDRA", nisn: "101979010", status: "LULUS" },
+      { name: "MUHAMMAD HAIKAL FACHREZZI", nisn: "96878211", status: "LULUS" },
+      { name: "MUHAMMAD HANAFI", nisn: "94146602", status: "LULUS" },
+      { name: "MUHAMMAD HIDEAKI ISDIANTO", nisn: "106039094", status: "LULUS" },
+      { name: "MUHAMMAD IBNU AZRIEL", nisn: "3095822307", status: "LULUS" },
+      { name: "MUHAMMAD RIZKY TRIHARTANTO", nisn: "96982405", status: "LULUS" },
+      { name: "HARITS SEPRIANSYAH", nisn: "96959584", status: "LULUS" },
+      { name: "AFFAN ABDUL HAKIM", nisn: "82648636", status: "LULUS" },
+      { name: "BAGAS GANYHARTA AKHBAR RIWU", nisn: "93496235", status: "LULUS" },
+      { name: "MATORI OTTOMAN KAMULEY", nisn: "92718235", status: "LULUS" },
+      { name: "MUHAMAD ZEMA ARIF", nisn: "109727302", status: "LULUS" },
+      { name: "MUHAMMAD AMALUDDIN", nisn: "106603346", status: "LULUS" },
+      { name: "MUHAMMAD SAHAL MA'RUF", nisn: "94401642", status: "LULUS" },
+      { name: "MUHAMMAD SURYA TATA", nisn: "97848059", status: "LULUS" },
+      { name: "MUHAMMAD SYAHFIQ ABDULLAH", nisn: "103584612", status: "LULUS" },
+      { name: "MUHAMMAD ZIDAN", nisn: "98447423", status: "LULUS" },
+      { name: "RAFA NASKA QURANIQUE", nisn: "94769923", status: "LULUS" },
+      { name: "RAYHAN DIANDRA PRATAMA", nisn: "105953468", status: "LULUS" },
+      { name: "REVAN SYAHPUTRA YUSTIAN", nisn: "92677863", status: "LULUS" },
+      { name: "REYHAN KIANDRA RIAMIZARD", nisn: "109740378", status: "LULUS" },
+      { name: "REZKY ARIANSYAH", nisn: "109194821", status: "LULUS" },
+      { name: "RIFQI HASHIF NAWAWI", nisn: "109494778", status: "LULUS" },
+      { name: "SALMAN ALFARIZY MAYADI", nisn: "102731879", status: "LULUS" },
+      { name: "SULAIMAN MUBAROK", nisn: "106505834", status: "LULUS" },
+      { name: "SYAHID AFFRIDY SARKER", nisn: "103761235", status: "LULUS" },
+      { name: "SYAIBI VALINDRA", nisn: "103031750", status: "LULUS" },
+      { name: "TEUKU NABHAN SAKHIY NASRUL", nisn: "101286259", status: "LULUS" },
+      { name: "YAZID AL ATSARY", nisn: "92779903", status: "LULUS" },
+      { name: "YUSUF ABDURRAZZAQ S. HAFIZ", nisn: "107820654", status: "LULUS" },
+      { name: "YUSUF HANAFIAH", nisn: "3106583385", status: "LULUS" },
+      { name: "ZHORIFO ANANDA FIRLI", nisn: "91196341", status: "LULUS" },
+      { name: "ZIQRI HAIKAL KENNY PRANAJA", nisn: "107647721", status: "LULUS" },
+      { name: "ZULFA MUHAMMAD AL HAFIIZH", nisn: "104430828", status: "LULUS" },
+      { name: "TEUKU ILHAMSYAH", nisn: "0131965467", status: "LULUS" },
+      { name: "VICKY ARDIANSYAH", nisn: "0131965468", status: "LULUS" },
+      // Female students data
+      { name: "AFIFAH MARITZA NASUTION", nisn: "104155790", status: "LULUS" },
+      { name: "AFIFAH RAHMATINA HASNA", nisn: "92030811", status: "LULUS" },
+      { name: "AFIFAH ZAHRA ZAKY", nisn: "104686228", status: "LULUS" },
+      { name: "ALFIYYAH HUSNAWATI", nisn: "96539038", status: "LULUS" },
+      { name: "ALIFA ZAHRA NADYA", nisn: "104395131", status: "LULUS" },
+      { name: "ATHALLAH LUNNA IZZ ZHARFAN", nisn: "97103650", status: "LULUS" },
+      { name: "ATHIRAH SURYA FARZANA", nisn: "107839752", status: "LULUS" },
+      { name: "ATHIYAH", nisn: "99353842", status: "LULUS" },
+      { name: "ATIKA FEBRI YANTI. DR", nisn: "3107136716", status: "LULUS" },
+      { name: "AUDIYATUZZAHRA", nisn: "92622802", status: "LULUS" },
+      { name: "AULYA NAFIATU ZAMZAMI", nisn: "109114224", status: "LULUS" },
+      { name: "AURA BENING", nisn: "107066854", status: "LULUS" },
+      { name: "AURELLIA BELVA RAMADHANI", nisn: "3095729061", status: "LULUS" },
+      { name: "AYUNDA SYIFA APSARY", nisn: "103971988", status: "LULUS" },
+      { name: "BALQIS EL-JAUZA RAMADHANI", nisn: "97114830", status: "LULUS" },
+      { name: "BILKIS FAJAR MUTIARA", nisn: "96268123", status: "LULUS" },
+      { name: "CALLYSTA ATHIFA", nisn: "97648108", status: "LULUS" },
+      { name: "DIAN RAHMATUL AINI", nisn: "99733995", status: "LULUS" },
+      { name: "FARZANA NURUL VERDE", nisn: "99994890", status: "LULUS" },
+      { name: "FATTIKAH RIZQI NURIS", nisn: "3104936612", status: "LULUS" },
+      { name: "FILISTHINE GHAZIA SYAHEEDA", nisn: "3095171727", status: "LULUS" },
+      { name: "FIVI NABILA JUVIANTI", nisn: "98129289", status: "LULUS" },
+      { name: "HAFIZHAH ANITA HIDAYAT", nisn: "105606662", status: "LULUS" },
+      { name: "ADERINA ZASKIA FITRI", nisn: "94565276", status: "LULUS" },
+      { name: "AFIFAH ZAHRAH", nisn: "3091606257", status: "LULUS" },
+      { name: "AIKA SALSABILA", nisn: "109425179", status: "LULUS" },
+      { name: "AISYAH", nisn: "98377466", status: "LULUS" },
+      { name: "AISYAH AL 'FARRAS", nisn: "106762905", status: "LULUS" },
+      { name: "AISYAH AZZAHRA RAFLES", nisn: "3093405719", status: "LULUS" },
+      { name: "AISYAH PUTRI PERDANA", nisn: "108449440", status: "LULUS" },
+      { name: "AISYAH RAMADHANI", nisn: "91819735", status: "LULUS" },
+      { name: "AJENG ZAHRA NAVISA", nisn: "97812302", status: "LULUS" },
+      { name: "ALMIRA HAZIQAH AULIA", nisn: "105037152", status: "LULUS" },
+      { name: "FITRIA HILMANI", nisn: "3090484122", status: "LULUS" },
+      { name: "GLADYA SANSEVIERRA", nisn: "106403897", status: "LULUS" },
+      { name: "HAMNAH MUTHMAINNAH", nisn: "92476889", status: "LULUS" },
+      { name: "HANIFAH NUR JANAH", nisn: "104626600", status: "LULUS" },
+      { name: "HAURA SHABIRA MANNAWAN", nisn: "106778443", status: "LULUS" },
+      { name: "INDRIANTI LUSIANI", nisn: "96545911", status: "LULUS" },
+      { name: "JIHAN LUTFIAH SYARIF", nisn: "96391850", status: "LULUS" },
+      { name: "JIHAN MAKAILA", nisn: "94162268", status: "LULUS" },
+      { name: "KAHIILAH MAZAAYAA", nisn: "99015231", status: "LULUS" },
+      { name: "KEISHA AZZALEA KHANZA", nisn: "103685845", status: "LULUS" },
+      { name: "KHANSA ALTHAFUNNISA", nisn: "94678303", status: "LULUS" },
+      { name: "KHANSYA AFIFAH", nisn: "3096416270", status: "LULUS" },
+      { name: "LAILA KARINA BR BERUTU", nisn: "103333255", status: "LULUS" },
+      { name: "ALENTA SHAYREZ", nisn: "78203807", status: "LULUS" },
+      { name: "MARYAM BINTU YASIR", nisn: "81731494", status: "LULUS" },
+      { name: "MEILINDA AMELIA", nisn: "92176201", status: "LULUS" },
+      { name: "NADA SAFWA AZZAHRA", nisn: "3095724697", status: "LULUS" },
+      { name: "NAFISAH DZAHABIYYAH", nisn: "93499110", status: "LULUS" },
+      { name: "NAFISAH LATHIFATUNNISA", nisn: "108369679", status: "LULUS" },
+      { name: "NAFISATIN NISA", nisn: "106761320", status: "LULUS" },
+      { name: "NAILA HADI PUTRI", nisn: "93310070", status: "LULUS" },
+      { name: "NAJWA TURODIAL HUSNA", nisn: "93339554", status: "LULUS" },
+      { name: "NAURAH AISYAH HYRARULL", nisn: "91468561", status: "LULUS" },
+      { name: "NAYLA AULIA SIPAYUNG", nisn: "93168789", status: "LULUS" },
+      { name: "NEISYA RAMADHANI", nisn: "109070256", status: "LULUS" },
+      { name: "NIHAN JAILANI", nisn: "91728671", status: "LULUS" },
+      { name: "NISRIINA MYKESA NASYWAA PUTRI", nisn: "105923647", status: "LULUS" },
+      { name: "NUR HIKMAH SHAFRINA", nisn: "101218643", status: "LULUS" },
+      { name: "PUTRI AINUN NUR", nisn: "109679913", status: "LULUS" },
+      { name: "QUEENCY KYARA BALQIS", nisn: "109231859", status: "LULUS" },
+      { name: "QUINSHA AMANDA FAKHIRA", nisn: "104387357", status: "LULUS" },
+      { name: "RACHEL HERDZULLAINI ISKANDAR", nisn: "103623902", status: "LULUS" },
+      { name: "RAJA ZARIFAH ZARQA", nisn: "104273466", status: "LULUS" },
+      { name: "RIZMA CAHAYA RIZKY", nisn: "103255387", status: "LULUS" },
+      { name: "ZIEFANNA NAFEEZA PUTRI KURNIAWAN", nisn: "99151392", status: "LULUS" },
+      { name: "AISHA SAKHI KIRANIA HARYADI", nisn: "83129785", status: "LULUS" },
+      { name: "MUTIARA RAJWAA ZAAHIYAH", nisn: "103144761", status: "LULUS" },
+      { name: "NABILA ARDIANTY", nisn: "3093725700", status: "LULUS" },
+      { name: "NADA SAUSAN LATHIFAH", nisn: "105861057", status: "LULUS" },
+      { name: "NAFISHA ADILLA SYIFA", nisn: "106637887", status: "LULUS" },
+      { name: "QUEENESHA ANINDYA CAHYANI", nisn: "107155977", status: "LULUS" },
+      { name: "RATHA SANIA", nisn: "103789241", status: "LULUS" },
+      { name: "RATU AZIQOH SWEP", nisn: "101958702", status: "LULUS" },
+      { name: "RATU ENDA NUR AISYAH", nisn: "97608027", status: "LULUS" },
+      { name: "RAYSHANAYA RAJWAA RAHMADI", nisn: "103329454", status: "LULUS" },
+      { name: "SAZHYA MUMTAZA ASSAADAH FIQOULY", nisn: "107837296", status: "LULUS" },
+      { name: "SHABIRA AQILA ZAHRATUSYITA", nisn: "98433178", status: "LULUS" },
+      { name: "SHAFIYYAH ADH DHIYAA", nisn: "102540098", status: "LULUS" },
+      { name: "SYAFIRA", nisn: "93149337", status: "LULUS" },
+      { name: "SYAHFANI CAHYA", nisn: "99802738", status: "LULUS" },
+      { name: "SYAHRINI AFIFA SYAM", nisn: "97316057", status: "LULUS" },
+      { name: "TALITA HASNA FAIHA", nisn: "103333798", status: "LULUS" },
+      { name: "THAHIRAH BINTE MOHAMED AZMAN", nisn: "95351033", status: "LULUS" },
+      { name: "TIARANNISA ARIENDRA", nisn: "101185047", status: "LULUS" },
+      { name: "TSABITA QONITYNA FAZA", nisn: "101281247", status: "LULUS" },
+      { name: "WINNY TRI RAMADHANI", nisn: "99003257", status: "LULUS" },
+      { name: "YASMIN ALIMATUNNISA NABILA", nisn: "108985549", status: "LULUS" },
+      { name: "ZAHRA ANANDYA FADLI", nisn: "107940247", status: "LULUS" },
+      { name: "ZAHRA NUR AFIFAH", nisn: "109877409", status: "LULUS" }
+    ];
+
+    // Page transition and digital noise elements
+    const transition = document.querySelector(".page-transition");
+    const digitalNoise = document.querySelector(".digital-noise");
+    const futuristicOverlay = document.getElementById("futuristicOverlay");
+    const curtainOverlay = document.getElementById("curtainOverlay");
+
+    // Create futuristic animation elements for overlay
+    function createFuturisticOverlayElements() {
+      futuristicOverlay.innerHTML = "";
+      // Create circles
+      for (let i = 0; i < 7; i++) {
+        const circle = document.createElement("div");
+        circle.className = "futuristic-circle-anim";
+        const size = 50 + Math.random() * 150;
+        circle.style.width = size + "px";
+        circle.style.height = size + "px";
+        circle.style.top = Math.random() * 90 + "vh";
+        circle.style.left = Math.random() * 90 + "vw";
+        circle.style.animationDuration = 2 + Math.random() * 2 + "s";
+        circle.style.animationDelay = Math.random() * 2 + "s";
+        futuristicOverlay.appendChild(circle);
+      }
+      // Create lines
+      for (let i = 0; i < 5; i++) {
+        const line = document.createElement("div");
+        line.className = "futuristic-line-anim";
+        line.style.width = 100 + Math.random() * 300 + "px";
+        line.style.top = Math.random() * 100 + "vh";
+        line.style.left = Math.random() * 100 + "vw";
+        line.style.animationDuration = 2 + Math.random() * 2 + "s";
+        line.style.animationDelay = Math.random() * 2 + "s";
+        futuristicOverlay.appendChild(line);
+      }
+    }
+
+    // Show futuristic overlay animation for a duration
+    function showFuturisticOverlay(duration = 600) {
+      createFuturisticOverlayElements();
+      futuristicOverlay.style.opacity = "1";
+      futuristicOverlay.style.pointerEvents = "none";
+      futuristicOverlay.style.transition = "opacity 0.3s ease";
+      setTimeout(() => {
+        futuristicOverlay.style.opacity = "0";
+      }, duration - 300);
+      setTimeout(() => {
+        futuristicOverlay.innerHTML = "";
+      }, duration);
+    }
+
+    // Show curtain animation for page1 transition
+    function showCurtainAnimation(duration = 600) {
+      return new Promise((resolve) => {
+        curtainOverlay.classList.add("active");
+        setTimeout(() => {
+          curtainOverlay.classList.remove("active");
+          resolve();
+        }, duration);
+      });
+    }
+
+    function transitionToPage(pageId) {
+      transition.classList.add("active");
+      digitalNoise.classList.add("active");
+
+      if (pageId === "page1") {
+        // For page1, use curtain animation
+        showCurtainAnimation(600).then(() => {
+          document.querySelectorAll(".page").forEach((page) => {
+            page.classList.remove("active");
+            page.style.opacity = "0";
+          });
+          const page = document.getElementById(pageId);
+          page.classList.add("active");
+          page.style.opacity = "1";
+
+          transition.classList.remove("active");
+          transition.classList.add("exit");
+
+          setTimeout(() => {
+            transition.classList.remove("exit");
+            digitalNoise.classList.remove("active");
+          }, 600);
+          window.scrollTo(0, 0);
+          createFuturisticElements();
+        });
+      } else {
+        // For other pages, use fade animation
+        showFuturisticOverlay(600);
+        setTimeout(() => {
+          document.querySelectorAll(".page").forEach((page) => {
+            page.classList.remove("active");
+            page.style.opacity = "0";
+          });
+          const page = document.getElementById(pageId);
+          page.classList.add("active");
+          page.style.opacity = "1";
+
+          transition.classList.remove("active");
+          transition.classList.add("exit");
+
+          setTimeout(() => {
+            transition.classList.remove("exit");
+            digitalNoise.classList.remove("active");
+          }, 600);
+          window.scrollTo(0, 0);
+          createFuturisticElements();
+        }, 600);
+      }
+    }
+
+    function createFuturisticElements() {
+      document.querySelectorAll(".futuristic-circle:not(.static)").forEach((el) =>
+        el.remove()
+      );
+      for (let i = 0; i < 5; i++) {
+        const circle = document.createElement("div");
+        circle.className = "futuristic-circle";
+        circle.style.width = Math.random() * 100 + 50 + "px";
+        circle.style.height = circle.style.width;
+        circle.style.top = Math.random() * 80 + 10 + "%";
+        circle.style.left = Math.random() * 80 + 10 + "%";
+        circle.style.opacity = Math.random() * 0.2 + 0.1;
+        circle.style.position = "absolute";
+        circle.style.borderRadius = "50%";
+        circle.style.background = "rgba(59, 130, 246, 0.1)";
+        circle.style.border = "2px solid rgba(59, 130, 246, 0.3)";
+        circle.style.pointerEvents = "none";
+        document.body.appendChild(circle);
+      }
+    }
+
+    function checkGraduation() {
+      const searchInput = document.getElementById("search").value.trim().toUpperCase();
+
+      if (!searchInput) {
+        showCustomAlert();
+        return;
+      }
+
+      digitalNoise.classList.add("active");
+
+      setTimeout(() => {
+        const student = graduationData.find(
+          (s) => s.name.toUpperCase() === searchInput || s.nisn === searchInput
+        );
+
+        if (student) {
+          showGraduationResult(student);
+        } else {
+          showCustomAlert();
+        }
+
+        digitalNoise.classList.remove("active");
+      }, 800);
+    }
+
+    function showCustomAlert() {
+      const customAlert = document.getElementById("customAlert");
+      customAlert.classList.add("active");
+      digitalNoise.classList.add("active");
+      setTimeout(() => {
+        digitalNoise.classList.remove("active");
+      }, 300);
+    }
+
+    function closeCustomAlert() {
+      const customAlert = document.getElementById("customAlert");
+      customAlert.classList.remove("active");
+    }
+
+    let autoCloseTimer = null;
+    let autoCloseSeconds = 10;
+
+    function createBirthdayElements() {
+      const birthdayElements = document.getElementById("birthdayElements");
+      birthdayElements.innerHTML = "";
+
+      const balloonColors = [
+        "#ff6b6b",
+        "#4ecdc4",
+        "#ffbe0b",
+        "#3a86ff",
+        "#fb5607",
+        "#8338ec",
+      ];
+      for (let i = 0; i < 10; i++) {
+        const balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * 100 + "%";
+        balloon.style.backgroundColor =
+          balloonColors[Math.floor(Math.random() * balloonColors.length)];
+        balloon.style.animationDuration = Math.random() * 5 + 8 + "s";
+        balloon.style.animationDelay = Math.random() * 5 + "s";
+        birthdayElements.appendChild(balloon);
+      }
+
+      for (let i = 0; i < 15; i++) {
+        const star = document.createElement("div");
+        star.className = "birthday-star";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.animationDuration = Math.random() * 2 + 1 + "s";
+        star.style.animationDelay = Math.random() * 2 + "s";
+        birthdayElements.appendChild(star);
+      }
+
+      const confettiColors = [
+        "#ff6b6b",
+        "#4ecdc4",
+        "#ffbe0b",
+        "#3a86ff",
+        "#fb5607",
+        "#8338ec",
+        "#f15bb5",
+      ];
+      for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "birthday-confetti";
+        confetti.style.left = Math.random() * 100 + "%";
+        confetti.style.backgroundColor =
+          confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        confetti.style.width = Math.random() * 8 + 5 + "px";
+        confetti.style.height = Math.random() * 8 + 5 + "px";
+        confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
+        confetti.style.animationDelay = Math.random() * 3 + "s";
+        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+        if (Math.random() > 0.7) {
+          confetti.style.borderRadius = "50%";
+        } else if (Math.random() > 0.5) {
+          confetti.style.borderRadius = "3px";
+        } else {
+          confetti.style.width = "8px";
+          confetti.style.height = "8px";
+          confetti.style.clipPath =
+            "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
+        }
+        birthdayElements.appendChild(confetti);
+      }
+    }
+
+    function showGraduationResult(student) {
+      const modal = document.getElementById("graduationModal");
+      const modalContent = document.getElementById("modalContent");
+      const countdownSpan = document.getElementById("autoCloseCountdown");
+
+      createBirthdayElements();
+
+      modalContent.innerHTML = `
+        <div class="text-center">
+          <div class="w-24 h-24 mx-auto mb-4 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-full h-full text-green-500" aria-hidden="true">
+              <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z" />
+            </svg>
+            <div class="absolute inset-0 border-2 border-green-400 rounded-full" style="animation: pulse 2s infinite;"></div>
+          </div>
+          <div class="cake-icon mb-2"><span class="text-3xl" aria-hidden="true">🎓</span></div>
+          <h2 class="text-3xl font-bold text-green-600 mb-2 birthday-text nunito-font">${student.status}</h2>
+          <div class="text-xl font-semibold mb-1 nunito-font">${student.name}</div>
+          <div class="text-gray-600 mb-4">NISN: ${student.nisn}</div>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 relative overflow-hidden">
+            <p class="text-lg font-medium text-blue-800 birthday-text">
+              <span class="inline-block mx-1" aria-hidden="true">🎉</span>
+              <span class="inline-block mx-1">Selamat!</span>
+              <span class="inline-block mx-1" aria-hidden="true">🎊</span>
+            </p>
+            <p class="text-blue-700 mt-2">Anda telah menyelesaikan pendidikan di SMPS IT IMAM SYAFI'I BATAM dengan baik.</p>
+          </div>
+        </div>
+      `;
+
+      digitalNoise.classList.add("active");
+      setTimeout(() => {
+        modal.classList.add("active");
+        digitalNoise.classList.remove("active");
+        startAutoCloseCountdown();
+      }, 300);
+    }
+
+    function closeModal() {
+      clearInterval(autoCloseTimer);
+      const modal = document.getElementById("graduationModal");
+      modal.classList.remove("active");
+      document.querySelectorAll(".confetti").forEach((el) => el.remove());
+      transitionToPage("page1");
+      document.getElementById("search").value = "";
+      resetAutoCloseCountdown();
+    }
+
+    function startAutoCloseCountdown() {
+      let secondsLeft = 10;
+      const countdownSpan = document.getElementById("autoCloseCountdown");
+      countdownSpan.textContent = secondsLeft;
+      autoCloseTimer = setInterval(() => {
+        secondsLeft--;
+        countdownSpan.textContent = secondsLeft;
+        if (secondsLeft <= 0) {
+          clearInterval(autoCloseTimer);
+          closeModal();
+        }
+      }, 1000);
+    }
+
+    function resetAutoCloseCountdown() {
+      const countdownSpan = document.getElementById("autoCloseCountdown");
+      countdownSpan.textContent = "10";
+    }
+
+    // Countdown Timer Functions
+    function updateCountdown() {
+      const targetDate = new Date("June 10, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      updateCountdownUnit("days", days);
+      updateCountdownUnit("hours", hours);
+      updateCountdownUnit("minutes", minutes);
+      updateCountdownUnit("seconds", seconds);
+    }
+
+    function updateCountdownUnit(id, value) {
+      const element = document.getElementById(id);
+      const currentValue = element.innerText;
+      const newValue = value.toString().padStart(2, "0");
+
+      if (currentValue !== newValue) {
+        element.classList.remove("show");
+        void element.offsetWidth; // Trigger reflow
+        element.classList.add("show");
+        element.innerText = newValue;
+      }
+    }
+
+    // Unified button click handler with elegant animation, loading spinner and transition
+    function handleButtonClick(target, btn) {
+      if (!btn) return;
+
+      // If already loading, ignore clicks
+      if (btn.classList.contains("btn-loading")) return;
+
+      // Add loading state
+      btn.classList.add("btn-loading");
+
+      // Save original content
+      const originalContent = btn.innerHTML;
+
+      // Replace content with spinner and text "Loading..."
+      btn.innerHTML = `<span class="btn-spinner" aria-hidden="true"></span><span>Loading...</span>`;
+
+      // Add pressed scale animation
+      btn.classList.add("pressed");
+
+      // After short delay, remove pressed class and proceed
+      setTimeout(() => {
+        btn.classList.remove("pressed");
+
+        if (target === "check") {
+          // Run checkGraduation, then restore button content after result
+          checkGraduation();
+          // Restore button after 1.5s (enough for checkGraduation delay)
+          setTimeout(() => {
+            btn.classList.remove("btn-loading");
+            btn.innerHTML = originalContent;
+          }, 1500);
+        } else {
+          // For page transitions, wait for animation then restore button and transition
+          setTimeout(() => {
+            btn.classList.remove("btn-loading");
+            btn.innerHTML = originalContent;
+            transitionToPage(target);
+          }, 400);
+        }
+      }, 200);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      createFuturisticElements();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      document.getElementById("search").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          const checkBtn = document.getElementById("checkButton");
+          if (checkBtn) {
+            handleButtonClick("check", checkBtn);
+          } else {
+            checkGraduation();
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
